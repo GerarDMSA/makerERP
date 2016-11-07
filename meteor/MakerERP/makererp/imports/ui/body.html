@@ -1,0 +1,111 @@
+<template name="datos">
+  <div class="row stats-bar">
+      <div class="col-md-2 hp-bar">
+        <h1>Hp {{HP}}</h1>
+      </div>
+      <div class="col-md-2 exp-bar">
+        <h1>Exp {{exp}}</h1>
+      </div>
+      <div class="col-md-2 gold-bar">
+        <h1>Gold {{gold}}</h1>
+      </div>
+      <div class="col-md-2 level-bar">
+        <h1>Level {{level}}</h1>
+      </div>
+    </div>
+</template>
+<template name="habit">  
+          <br>
+            EXP:<br><input type="number" name="exp" id="exp" min="0" max="100" step="10" value="0"/><br>
+            Gold:<br><input type="number" name="gold" id="gold" min="0" max="200" step="5" value="0"/><br>
+            DMG:<br><input type="number" name="DMG" id="DMG" min="0" max="100" step="10" value="0"/><br>
+            <form class="new-task" id="habit-form">
+            <input type="text" name="text" id="text" placeholder="Add new Habit"/>
+          </form>
+</template>
+<template name="daily">
+<br>
+            
+              <form class="new-task" id="dayli-form">
+                <input type="text" name="text" id="text" placeholder="Add new DAILY"/>
+              </form>  
+
+</template>
+<body>
+  <div class="container">
+    <div class="row top-bar">
+      <div class="col-md-10 ">
+        <h1>MakerMex</h1>
+      </div>
+      <div class="col-md-2">
+         {{> loginButtons}}
+      </div>
+    </div>
+        {{> datos}}
+      <div class="row">
+
+    <div class="task-column col-md-3 todos">
+        <h1>HABITS</h1>
+        {{#if currentUser}}
+
+        {{> habit}}
+
+        {{/if}}
+        <ul>
+          {{#each tasks}}
+            {{> thabit}}
+          {{/each}}
+        </ul>
+      </div>
+      <div class="task-column col-md-3 dailies">
+          <h1>DAILIES</h1>
+          <h1>Daily left: ({{incompleteCount}})</h1>
+          <label class ="hide-completed">
+            <input type="checkbox" />
+            Hide completed Dailies
+          </label>
+            {{#if currentUser}}
+              {{> daily}}
+            {{/if}}
+          <ul>
+            {{#each daylis}}
+              {{> tdaily}}
+            {{/each}}
+          </ul>
+        </div>
+        <div class="task-column col-md-3 dailies">
+            <h1>TODOS</h1>
+            <h1>Todo left ({{incompleteCount}})</h1>
+            <label class ="hide-completed">
+              <input type="checkbox" />
+              Hide completed Todos
+            </label>
+            {{#if currentUser}}
+              <form class="new-task">
+                <input type="text" name="text" placeholder="Add new TO-DO"/>
+              </form>
+            {{/if}}
+            <ul>
+              {{#each tasks}}
+                {{> task}}
+              {{/each}}
+            </ul>
+          </div>
+          <div class="task-column col-md-3 dailies">
+              <h1>REWARDS</h1>
+              {{#if currentUser}}
+                <form class="new-task">
+                  <input type="text" name="text" placeholder="Add new REWARD"/>
+                </form>
+              {{/if}}
+
+              <ul>
+                {{#each tasks}}
+                  {{> task}}
+                {{/each}}
+              </ul>
+            </div>
+  </div>
+</div>
+</body>
+
