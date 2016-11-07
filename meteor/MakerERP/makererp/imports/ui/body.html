@@ -23,13 +23,30 @@
             <input type="text" name="text" id="text" placeholder="Add new Habit"/>
           </form>
 </template>
-<template name="daily">
-<br>
-            
+<template name="daily"> 
+          <br>
+            EXP:<br><input type="number" name="exp" id="exp" min="0" max="100" step="10" value="0"/><br>
+            Gold:<br><input type="number" name="gold" id="gold" min="0" max="200" step="5" value="0"/><br>
+            DMG:<br><input type="number" name="DMG" id="DMG" min="0" max="100" step="10" value="0"/><br>           
               <form class="new-task" id="dayli-form">
-                <input type="text" name="text" id="text" placeholder="Add new DAILY"/>
+                <input type="text" name="texto" id="texto" placeholder="Add new DAILY"/>
               </form>  
-
+</template>
+<template name="todo"> 
+          <br>
+            EXP:<br><input type="number" name="exp" id="exp" min="0" max="100" step="10" value="0"/><br>
+            Gold:<br><input type="number" name="gold" id="gold" min="0" max="200" step="5" value="0"/><br>
+            DMG:<br><input type="number" name="DMG" id="DMG" min="0" max="100" step="10" value="0"/><br>           
+              <form class="new-task" id="todos-form">
+                <input type="text" name="texto1" id="texto1" placeholder="Add new DAILY"/>
+              </form>  
+</template>
+<template name="reward"> 
+          <br>
+            Gold:<br><input type="number" name="gold" id="gold" min="0" max="200" step="5" value="0"/><br>           
+              <form class="new-task" id="rewards-form">
+                <input type="text" name="texto2" id="texto2" placeholder="Add new DAILY"/>
+              </form>  
 </template>
 <body>
   <div class="container">
@@ -81,27 +98,23 @@
               Hide completed Todos
             </label>
             {{#if currentUser}}
-              <form class="new-task">
-                <input type="text" name="text" placeholder="Add new TO-DO"/>
-              </form>
+              {{> todo}}
             {{/if}}
             <ul>
-              {{#each tasks}}
-                {{> task}}
+              {{#each todos}}
+                {{> ttodos}}
               {{/each}}
             </ul>
           </div>
           <div class="task-column col-md-3 dailies">
               <h1>REWARDS</h1>
               {{#if currentUser}}
-                <form class="new-task">
-                  <input type="text" name="text" placeholder="Add new REWARD"/>
-                </form>
+                {{> reward}}
               {{/if}}
 
               <ul>
-                {{#each tasks}}
-                  {{> task}}
+                {{#each rewards}}
+                  {{> trewards}}
                 {{/each}}
               </ul>
             </div>

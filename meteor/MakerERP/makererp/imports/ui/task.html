@@ -5,17 +5,35 @@
       <span class="text"><strong>{{username}}</strong>- {{text}}, Exp: {{exp}} , Gold: {{gold}} , Damage: {{dmge}}</span>
 </li>
 </template>
+
 <template name="task">
-  <!-- <li class="{{#if checked}}checked{{/if}}">
+<li class="{{#if checked}}checked{{/if}}">
     <button class ="delete">&times;</button>
       <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
       <span class="text"><strong>{{username}}</strong>- {{text}}, Exp: {{exp}} , Gold: {{gold}} , Damage: {{dmge}}</span>
-</li> -->
+</li>
 </template>
+
 <template name="tdaily">
   <li class="{{#if checked}}checked{{/if}}">
     <button class ="delete">&times;</button>
       <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
-      <span class="text"><strong>{{username}}</strong>- {{text}}, Exp: {{exp}} , Gold: {{gold}} , Damage: {{dmge}} Daily</span>
+      <span class="text"><strong>{{username}}</strong>- {{text}}, Exp: {{exp}} , Gold: {{gold}} , Damage: {{dmge}}</span>
 </li> 
+</template>
+
+<template name="ttodos">
+<li class="{{#if checked}}checked{{/if}}">
+    <button class ="delete">&times;</button>
+      <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
+      <span class="text"><strong>{{username}}</strong>- {{text}}, Exp: {{exp}} , Gold: {{gold}} , Damage: {{dmge}}</span>
+</li>
+</template>
+
+<template name="trewards">
+<li class="{{#if checked}}checked{{/if}}">
+    <button class ="delete">&times;</button>
+      <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
+      <span class="text"><strong>{{username}}</strong>- {{text}}, Gold: {{gold}} </span>
+</li>
 </template>
