@@ -14,40 +14,66 @@
       </div>
     </div>
 </template>
-<template name="habit">  
-          <br>
-            EXP:<br><input type="number" name="exp" id="exp" min="0" max="100" step="10" value="0"/><br>
-            Gold:<br><input type="number" name="gold" id="gold" min="0" max="200" step="5" value="0"/><br>
-            DMG:<br><input type="number" name="DMG" id="DMG" min="0" max="100" step="10" value="0"/><br>
+
+<template name="habit">            
             <form class="new-task" id="habit-form">
-            <input type="text" name="text" id="text" placeholder="Add new Habit"/>
+            <input type="text" name="s_habit_text" id="s_habit_text" placeholder="Add new Habit"/>
           </form>
+  <form class="task-numbers">
+    <div class="form-group">
+      <div class="col-sm-4" >
+        <input type="number" name="i_habit_exp" id="i_habit_exp" min="0" max="100" step="10" placeholder="EXP"/>
+      </div>
+      <div class="col-sm-4">
+        <input type="number" name="i_habit_gold" id="i_habit_gold" min="0" max="200" step="5" placeholder="Gold"/>
+      </div>
+      <div class="col-sm-4">
+        <input type="number" name="i_habit_DMG" id="i_habit_DMG" min="0" max="100" step="10" placeholder="Dmge"/>
+      </div>
+    </div>
+    </form>
 </template>
+
 <template name="daily"> 
-          <br>
-            EXP:<br><input type="number" name="exp" id="exp" min="0" max="100" step="10" value="0"/><br>
-            Gold:<br><input type="number" name="gold" id="gold" min="0" max="200" step="5" value="0"/><br>
-            DMG:<br><input type="number" name="DMG" id="DMG" min="0" max="100" step="10" value="0"/><br>           
               <form class="new-task" id="dayli-form">
                 <input type="text" name="texto" id="texto" placeholder="Add new DAILY"/>
               </form>  
+              <form class="task-numbers">
+                <div class="form-group">
+                  <div class="col-sm-4" >
+                    <input type="number" name="exp" id="exp" min="0" max="100" step="10" value="0" placeholder="EXP" />
+                  </div>
+                  <div class="col-sm-4">
+                    <input type="number" name="gold" id="gold" min="0" max="200" step="5" value="0" placeholder="Gold" />
+                  </div>
+                  <div class="col-sm-4">
+                    <input type="number" name="DMG" id="DMG" min="0" max="100" step="10" value="0" placeholder="DMG" /> 
+                  </div>
+                </div>
+              </form>
 </template>
+
 <template name="todo"> 
-          <br>
-            EXP:<br><input type="number" name="exp" id="exp" min="0" max="100" step="10" value="0"/><br>
-            Gold:<br><input type="number" name="gold" id="gold" min="0" max="200" step="5" value="0"/><br>
-            DMG:<br><input type="number" name="DMG" id="DMG" min="0" max="100" step="10" value="0"/><br>           
+                       
               <form class="new-task" id="todos-form">
                 <input type="text" name="texto1" id="texto1" placeholder="Add new DAILY"/>
               </form>  
+              <form class="new-task">
+                EXP:<input type="number" name="exp1" id="exp1" min="0" max="100" step="10" value="0"/>
+                Gold:<input type="number" name="gold1" id="gold1" min="0" max="200" step="5" value="0"/>
+                DMG:<input type="number" name="DMG1" id="DMG1" min="0" max="100" step="10" value="0"/>
+            </form>
 </template>
+
 <template name="reward"> 
-          <br>
-            Gold:<br><input type="number" name="gold" id="gold" min="0" max="200" step="5" value="0"/><br>           
               <form class="new-task" id="rewards-form">
                 <input type="text" name="texto2" id="texto2" placeholder="Add new DAILY"/>
               </form>  
+              <form class="new-task">
+                Gold:<input type="number" name="i_reward_gold" id="i_reward_gold" min="0" max="200" step="5" value="0"/>
+              </form>
 </template>
+
 <body>
   <div class="container">
     <div class="row top-bar">
@@ -68,6 +94,8 @@
         {{> habit}}
 
         {{/if}}
+        <br>
+        <br>
         <ul>
           {{#each tasks}}
             {{> thabit}}
@@ -86,7 +114,9 @@
             {{/if}}
           <ul>
             {{#each daylis}}
+
               {{> tdaily}}
+
             {{/each}}
           </ul>
         </div>
@@ -102,7 +132,9 @@
             {{/if}}
             <ul>
               {{#each todos}}
+
                 {{> ttodos}}
+
               {{/each}}
             </ul>
           </div>
@@ -114,7 +146,9 @@
 
               <ul>
                 {{#each rewards}}
+
                   {{> trewards}}
+
                 {{/each}}
               </ul>
             </div>

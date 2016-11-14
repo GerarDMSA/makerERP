@@ -1,8 +1,9 @@
+
 <template name="thabit">
   <li class="{{#if checked}}checked{{/if}}">
     <button class ="delete">&times;</button>
       <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
-      <span class="text"><strong>{{username}}</strong>- {{text}}, Exp: {{exp}} , Gold: {{gold}} , Damage: {{dmge}}</span>
+      <span class="text"><strong>{{username}}</strong>- {{s_habit_text}}, Exp: {{i_habit_exp}} , Gold: {{i_habit_gold}} , Damage: {{i_habit_dmge}}</span>
 </li>
 </template>
 
@@ -34,6 +35,6 @@
 <li class="{{#if checked}}checked{{/if}}">
     <button class ="delete">&times;</button>
       <input type="checkbox" checked="{{checked}}" class="toggle-checked"/>
-      <span class="text"><strong>{{username}}</strong>- {{text}}, Gold: {{gold}} </span>
+      <span class="text"><strong>{{username}}</strong>- {{text}}, Gold: {{i_reward_gold}} </span>
 </li>
 </template>

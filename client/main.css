@@ -74,6 +74,21 @@ form {
   font-size: 1em;
 }
 
+.task-numbers input {
+  width: 140%;
+  background: transparent;
+  border: none;
+  font-size: 1em;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #959;
+}
+
+.task-numbers input:focus{
+  outline: 0;
+}
+
 .new-task input:focus{
   outline: 0;
 }

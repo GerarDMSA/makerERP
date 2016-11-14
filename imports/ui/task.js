@@ -4,6 +4,7 @@ import{ Daylis } from '../api/tasks.js';
 import{ Todos } from '../api/tasks.js';
 import{ Rewards } from '../api/tasks.js';
 import './task.html';
+
 // use  Roles.addUsersToRoles( userId, [ 'roleOne', 'roleTwo', 'roleThree' ] ); to add roles
 // use Meteor.users.find().fetch() to check if role was given
 
@@ -23,7 +24,7 @@ import './task.html';
     }
   });
 */
-
+//Eventos de las tareas de Habits
 Template.thabit.events({
   'click .toggle-checked'(){
     if (Meteor.user().username == this.username || Roles.userIsInRole( Meteor.userId(), 'admin' )){
@@ -38,6 +39,7 @@ Template.thabit.events({
   }
   },
 });
+//Eventos de las tareas de Dailies
 Template.tdaily.events({
   'click .toggle-checked'(){
     if (Meteor.user().username == this.username || Roles.userIsInRole( Meteor.userId(), 'admin' )){
@@ -52,6 +54,7 @@ Template.tdaily.events({
   }
   },
 });
+//Eventos de las tareas de Todos
 Template.ttodos.events({
   'click .toggle-checked'(){
     if (Meteor.user().username == this.username || Roles.userIsInRole( Meteor.userId(), 'admin' )){
@@ -66,6 +69,7 @@ Template.ttodos.events({
   }
   },
 });
+//Eventos de  las tareas d Rewards
 Template.trewards.events({
   'click .toggle-checked'(){
     if (Meteor.user().username == this.username || Roles.userIsInRole( Meteor.userId(), 'admin' )){
